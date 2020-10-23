@@ -1,0 +1,154 @@
+.wrapper {
+  margin: 0 10%;
+  padding: 15px;
+  padding-bottom: 25px;
+  margin-top: 30px;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  background-color: white;
+  margin-bottom: 36px;
+}
+
+/* header */
+.search-header {
+  background-color: #55565c;
+  color: white;
+  padding: 0 20px;
+  border-radius: 6px;
+}
+
+.title {
+  width: 70%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.title h2 {
+  margin: 0 !important;
+  font-weight: 500;
+  font-size: 24px;
+}
+
+/* Buttons */
+.btn-wrapper {
+  position: relative;
+}
+
+.btn{
+  position: absolute;
+  right: 0;
+  background-color: #3CA4A4;
+  border-radius: 5px;
+  border: none;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  text-align: center;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  margin: 16px 0;
+  margin-bottom: 5px;
+  text-decoration: none;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #64ccbc;
+}
+
+
+/* form */
+.search {
+  padding: 20px 0;
+}
+
+.searchTerm {
+  width: 85%;
+  padding: 10px;
+  height: 20px;
+  border-radius: 50px;
+  outline: none;
+  color: #9DBFAF;
+  vertical-align: middle;
+  background: url(../assets/img/search-icon.png) no-repeat scroll 9px 9px;
+  background-size: 22px;
+  background-color: white;
+  padding-left:35px;
+  font-size: 15px;
+  border: 1px solid transparent;
+}
+
+.searchTerm:focus{
+  border-color: #00B4CC;
+  color: #55565c;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 30%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* new */
+/* This is what we are focused on */
+.table-wrapper{
+  overflow-y: scroll;
+  max-height: 450px;
+  margin-top: 59px;
+  border: 1px solid #cccbcc;
+}
+
+.table-wrapper th{
+    position: sticky;
+    top: 0;
+}
+
+/* A bit more styling to make it look better */
+.table-wrapper{
+  background: white;
+  border-radius: 5px;;
+  border: 1px solid #cccbcc;
+}
+
+.table-wrapper tr{
+  border: 1px solid #cccbcc;
+}
+
+table{
+  border-collapse: collapse;
+  width: 100%;
+}
+
+thead tr th{
+    background: #f8f8f8;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+td,th{
+  padding: 10px;
+  text-align: center;
+  text-align: left;
+}
+
+/* Scrollbar */
+
+.table-wrapper::-webkit-scrollbar-track
+{
+	border-radius: 10px;
+	background-color:#F5F5F5;
+}
+
+.table-wrapper::-webkit-scrollbar
+{
+	width: 6px;
+	background-color: #F5F5F5;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #55565c;
+}
