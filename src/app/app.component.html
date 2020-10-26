@@ -19,32 +19,37 @@
     </div>
   </div>
   <div class="btn-wrapper">
-    <button
+    <!-- <button
       class="btn"
       (click)="exportedexcel()">
       Export
-    </button>
+    </button> -->
+    <button
+      class="btn"
+      (click)="XLExport('excel-table')">
+    Export
+  </button>
   </div>
   <div class="table-wrapper">
     <table class="table fixed_header" id="excel-table">
       <thead> 
         <tr>
-          <th (click)="sortTable(0)">Authority Subject</th>
-          <th (click)="sortTable(1)">Organzational Unit</th>
-          <th (click)="sortTable(2)">Position 1</th>
-          <th (click)="sortTable(3)">Position 2</th>
-          <th (click)="sortTable(4)">Position 3</th>
-          <th (click)="sortTable(5)">Position 4</th>
+          <th (click)="sortTable(0)" style="height: 50px; background-color: #f8f8f8; text-align: left; border: 0;">Authority Subject</th>
+          <th (click)="sortTable(1)" style="height: 50px; background-color: #f8f8f8; text-align: left; border: 0;">Organzational Unit</th>
+          <th (click)="sortTable(2)" style="height: 50px; background-color: #f8f8f8; text-align: left; border: 0;">Position 1</th>
+          <th (click)="sortTable(3)" style="height: 50px; background-color: #f8f8f8; text-align: left; border: 0;">Position 2</th>
+          <th (click)="sortTable(4)" style="height: 50px; background-color: #f8f8f8; text-align: left; border: 0;">Position 3</th>
+          <th (click)="sortTable(5)" style="height: 50px; background-color: #f8f8f8; text-align: left; border: 0;">Position 4</th>
         </tr>
     </thead>
     <tbody>
       <tr *ngFor="let value of values$ | async">
-        <td>{{ value.subject }}</td>
-        <td>{{ value.unit }}</td>
-        <td>{{ value.position1 }}</td>
-        <td>{{ value.position2 }}</td>
-        <td>{{ value.position3 }}</td>
-        <td>{{ value.position4 }}</td>
+        <td style="height: 40px; text-align: left; vertical-align: middle; border: 0; border-bottom: 1px solid #cccbcc">{{ value.subject }}</td>
+        <td style="height: 40px; text-align: left; vertical-align: middle; border: 0; border-bottom: 1px solid #cccbcc">{{ value.unit }}</td>
+        <td style="height: 40px; text-align: left; vertical-align: middle; border: 0; border-bottom: 1px solid #cccbcc">{{ value.position1 }}</td>
+        <td style="height: 40px; text-align: left; vertical-align: middle; border: 0; border-bottom: 1px solid #cccbcc">{{ value.position2 }}</td>
+        <td style="height: 40px; text-align: left; vertical-align: middle; border: 0; border-bottom: 1px solid #cccbcc">{{ value.position3 }}</td>
+        <td style="height: 40px; text-align: left; vertical-align: middle; border: 0; border-bottom: 1px solid #cccbcc">{{ value.position4 }}</td>
       </tr>
     </tbody>
     </table>

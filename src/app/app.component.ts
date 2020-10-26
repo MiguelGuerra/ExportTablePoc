@@ -37,12 +37,12 @@ export class AppComponent {
       withLatestFrom(this.value$),
       map(([val, value]) =>
         !val ? value : value.filter((x) => 
-          x.subject.toLowerCase().includes(val) ||
-          x.unit.toLowerCase().includes(val) ||
-          x.position1.toLowerCase().includes(val) ||
-          x.position2.toLowerCase().includes(val) ||
-          x.position3.toLowerCase().includes(val) ||
-          x.position4.toLowerCase().includes(val))
+          x.subject.toLowerCase().includes(val.toLowerCase()) ||
+          x.unit.toLowerCase().includes(val.toLowerCase()) ||
+          x.position1.toLowerCase().includes(val.toLowerCase()) ||
+          x.position2.toLowerCase().includes(val.toLowerCase()) ||
+          x.position3.toLowerCase().includes(val.toLowerCase()) ||
+          x.position4.toLowerCase().includes(val.toLowerCase()))
       )
     );
   }
@@ -289,6 +289,7 @@ export class AppComponent {
 
   exportedexcel(): void {
     let element = document.getElementById("excel-table");
+    
     const ws: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
 
     const wb: XLSX.WorkBook = XLSX.utils.book_new();
@@ -355,6 +356,22 @@ export class AppComponent {
       }
     }
   }
+
+  XLExport(tableId) {
+    var tab_text = "<table border='2px'><tr bgcolor='#87AFC6'>";
+    var textRange;
+    var j = 0;
+    var tab = document.getElementById(tableId);
+    for (j = 0 ; j < tab.rows.length ; j++) {
+        tab_text = tab_text + tab.rows[j].innerHTML + "</tr>";
+    }
+    tab_text = tab_text + "</table>";
+    tab_text = tab_text.replace(/<A[^>]*>|<\/A>/g, "");//remove if u want links in your table
+    tab_text = tab_text.replace(/<img[^>]*>/gi, ""); // remove if u want images in your table
+    tab_text = tab_text.replace(/<input[^>]*>|<\/input>/gi, ""); // remove input params
+    var sa = window.open('data:application/vnd.ms-excel,' + encodeURIComponent(tab_text));
+    return (sa);
+}
 }
 
 export interface value {
