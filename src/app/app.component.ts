@@ -361,7 +361,7 @@ export class AppComponent {
     var tab_text = "<table border='2px'><tr bgcolor='#87AFC6'>";
     var textRange;
     var j = 0;
-    var tab = document.getElementById(tableId);
+    var tab = (<HTMLTableElement>document.getElementById(tableId));
     for (j = 0 ; j < tab.rows.length ; j++) {
         tab_text = tab_text + tab.rows[j].innerHTML + "</tr>";
     }
@@ -372,7 +372,7 @@ export class AppComponent {
     var sa = window.open('data:application/vnd.ms-excel,' + encodeURIComponent(tab_text));
     return (sa);
 }
-}
+} 
 
 export interface value {
   subject: string;
